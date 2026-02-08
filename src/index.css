@@ -1,31 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --breakpoint-3xl: 1920px;  /* Full HD / 2K Base */
+  --breakpoint-4xl: 2560px;  /* QHD / 2.5K */
+  --breakpoint-5xl: 3840px;  /* 4K UHD */
+  --breakpoint-6xl: 5760px;  /* 6K */
+  --breakpoint-7xl: 7680px;  /* 8K */
+  --breakpoint-8xl: 11520px; /* 12K */
+  --breakpoint-9xl: 15360px; /* 16K */
+}
 
 @layer base {
   body {
     margin: 0;
     min-height: 100vh;
+    font-family: 'Inter', sans-serif;
     color: #f8fafc;
-    
-    background-color: #020617; 
-
+    background-color: #000000;
     background-image: 
-      radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.25), transparent 60%), 
-      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.20), transparent 50%); 
-
-    background-size: 150% 150%, 120% 120%;
-    
+      radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.15), transparent 60%), 
+      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.10), transparent 50%); 
+    background-size: 150% 150%;
     animation: abyssPulse 15s ease-in-out infinite alternate;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-cinzel { font-family: 'Cinzel', serif; }
+  .font-playfair { font-family: 'Playfair Display', serif; }
+  .font-inter { font-family: 'Inter', sans-serif; }
+  
+  .glass-panel {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .gold-glow {
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+  }
+  
+  .gold-border-glow:hover {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2), inset 0 0 10px rgba(251, 191, 36, 0.1);
   }
 }
 
 @keyframes abyssPulse {
-  0% {
-    background-position: 0% 0%, 100% 100%;
-  }
-  50% {
-    backdrop-filter: hue-rotate(15deg);
-  }
-  100% {
-    background-position: 100% 100%, 0% 0%;
-  }
+  0% { background-position: 0% 0%; }
+  50% { backdrop-filter: hue-rotate(15deg); }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
 }
