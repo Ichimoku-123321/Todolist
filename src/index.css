@@ -19,9 +19,9 @@
     font-family: 'Inter', sans-serif;
     color: #f8fafc;
     background-color: #000000;
-    background-image: 
-      radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.15), transparent 60%), 
-      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.10), transparent 50%); 
+    background-image:
+            radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.15), transparent 60%),
+            radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.10), transparent 50%);
     background-size: 150% 150%;
     animation: abyssPulse 15s ease-in-out infinite alternate;
     overflow-x: hidden;
@@ -32,7 +32,7 @@
   .font-cinzel { font-family: 'Cinzel', serif; }
   .font-playfair { font-family: 'Playfair Display', serif; }
   .font-inter { font-family: 'Inter', sans-serif; }
-  
+
   .glass-panel {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(16px);
@@ -44,7 +44,7 @@
   .gold-glow {
     text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
   }
-  
+
   .gold-border-glow:hover {
     box-shadow: 0 0 20px rgba(251, 191, 36, 0.2), inset 0 0 10px rgba(251, 191, 36, 0.1);
   }
